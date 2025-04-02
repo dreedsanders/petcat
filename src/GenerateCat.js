@@ -144,13 +144,12 @@ function GenerateCat() {
     <div>
       <h1>Pet Cat</h1>
       <h5>
-        Just imagine its a {dailycat.size}ish {dailycat.age} {dailycat.type} cat
+        Just imagine its a {dailycat.size}ish {dailycat.age} {dailycat.type}
       </h5>
-          <p>They are currently {currentAction?.action}{currentAction?.action == "nap" ? "p": null}ing</p>
-      <p>They will do this for {currentAction?.time} minutes</p>
       <p>
-        Time Remaining: {Math.floor(timeRemaining / 60)} minutes{" "}
-        {timeRemaining % 60} seconds
+        They are currently {currentAction?.action}
+        {currentAction?.action == "nap" ? "p" : null}ing for another{" "}
+        {Math.floor(timeRemaining / 60)} minutes {timeRemaining % 60} seconds
       </p>
       <img src={imgsrc} />
       <WordPopup word={currentAction?.voice ? currentAction.voice : null} />
