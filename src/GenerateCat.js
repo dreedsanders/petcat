@@ -8,7 +8,7 @@ import { React, useState, useEffect } from "react";
 import clean from "./cat-cleaning.gif";
 import eat from "./cat-eating.gif";
 import play from "./cat-playing.gif";
-import sleep from "./cat-sleeping.gif";
+import nap from "./cat-sleeping.gif";
 import talk from "./cat-talking.gif";
 import scratch from "./cat-scratching.gif";
 import WordPopup from "./WordPopUp";
@@ -125,7 +125,7 @@ function GenerateCat() {
   const images = [
     { eat: eat },
     { play: play },
-    { sleep: sleep },
+    { nap: nap },
     { scratch: scratch },
     { talk: talk },
     { clean: clean },
@@ -146,7 +146,7 @@ function GenerateCat() {
       <h5>
         Just imagine its a {dailycat.size}ish {dailycat.age} {dailycat.type} cat
       </h5>
-      <p>They are currently {currentAction?.action}ing</p>
+          <p>They are currently {currentAction?.action}{currentAction?.action == "nap" ? "p": null}ing</p>
       <p>They will do this for {currentAction?.time} minutes</p>
       <p>
         Time Remaining: {Math.floor(timeRemaining / 60)} minutes{" "}
